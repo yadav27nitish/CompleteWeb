@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  {{>header}}
+<title>Weather Project</title>
+</head>
+
+<body>
+  <div class="container" onload="disableSubmit()">
+    <div class="forms-container">
+      <div class="button-box">
+        <div id="btn"></div>
+        <button type="button" class="toggle-btn"><span class="up">Sign In</span></button>
+        <button type="button" class="toggle-btn">Sign Up</button>
+      </div>
+      <!-- SignUp section -->
+      <div class="signup-signup">
+        <form action="/" method="post" class="sign-up-form" id="sign-up-form">
+          {{!-- <h2 class="title">Sign Up</h2> --}}
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" name="firstname" autocomplete="off" required>
+          </div>
+    
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" name="email" autocomplete="off" required>
+          </div>
+    
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" required name="password"  autocomplete="off"> 
+            {{!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  --}}
+          </div>
+    
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Confirm Password" required name="cpassword" autocomplete="off"> 
+          </div> 
+            <div class="check">
+            <input type="checkbox" class="checkbox" onchange="activateButton(this)"><span> I agree terms & conditions</span>
+          </div> 
+            <input type="submit" id="submit" class="btn_solid"  value="Sign Up">
+            <p class="social-text">Or Sign Up with social plateform</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com" class="social-icon">
+                  <i class="fab fa-facebook"></i>
+                </a>
+    
+                <a href="https://twitter.com/home" class="social-icon">
+                  <i class="fab fa-twitter"></i>
+                </a>
+    
+                <a href="https://mail.google.com" class="social-icon">
+                  <i class="fab fa-google"></i>
+                </a>
+    
+                <a href="https://www.linkedin.com" class="social-icon">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </div>
+              <div class="option">
+            <p>Already have account <a href="./login">Click here</a></p>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+<script>
+var z = document.getElementById("btn").style.left="135px";
+      function disableSubmit() {
+      document.getElementById("submit").disabled = true;
+      }
+      function activateButton(element) {
+        if(element.checked) {
+          document.getElementById("submit").disabled = false;
+        }
+        else  {
+          document.getElementById("submit").disabled = true;
+        }
+
+    }
+</script>
+</body>
+</html>
